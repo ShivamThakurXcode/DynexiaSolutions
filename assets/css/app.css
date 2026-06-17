@@ -1,0 +1,126 @@
+/* ==========================================================================
+   Dyneixa Solutions — custom CSS layered on top of Tailwind (CDN)
+   ========================================================================== */
+
+:root {
+    --accent: #CCEB00;
+    --ink: #111111;
+}
+
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* Hide scrollbar look without breaking scroll */
+body {
+    font-feature-settings: "ss01";
+}
+
+/* Sticky header — subtle shrink/elevate after scroll */
+#site-header {
+    transform: translateY(0);
+}
+#site-header.is-scrolled nav {
+    box-shadow: 0 14px 40px -12px rgba(0, 0, 0, 0.4);
+}
+#site-header.is-scrolled {
+    top: 0.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Reveal animations — start hidden, JS adds .is-visible (GSAP overrides this
+   when present; this is the no-JS / reduced-motion graceful state).
+   -------------------------------------------------------------------------- */
+[data-reveal] {
+    opacity: 0;
+    will-change: transform, opacity;
+}
+[data-reveal="up"]    { transform: translateY(40px); }
+[data-reveal="scale"] { transform: scale(0.96); }
+[data-reveal="fade"]  { transform: none; }
+
+.reveal-ready [data-reveal] {
+    transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1);
+}
+[data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* If JS/GSAP is unavailable, show everything after load */
+.no-js [data-reveal],
+.reduce-motion [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Marquee
+   -------------------------------------------------------------------------- */
+.marquee {
+    overflow: hidden;
+    width: 100%;
+}
+.marquee__track {
+    display: inline-flex;
+    will-change: transform;
+}
+.marquee__group {
+    flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Giant footer wordmark — chromatic glitch
+   -------------------------------------------------------------------------- */
+.glitch {
+    position: relative;
+    text-shadow:
+        2px 0 rgba(0, 200, 255, 0.35),
+       -2px 0 rgba(255, 0, 90, 0.35);
+}
+.glitch::before,
+.glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+.glitch::before {
+    color: rgba(0, 200, 255, 0.25);
+    transform: translateX(-3px);
+    mix-blend-mode: multiply;
+}
+.glitch::after {
+    color: rgba(255, 0, 90, 0.22);
+    transform: translateX(3px);
+    mix-blend-mode: multiply;
+}
+@media (prefers-reduced-motion: reduce) {
+    .glitch { text-shadow: none; }
+    .glitch::before, .glitch::after { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Filter transitions (work page)
+   -------------------------------------------------------------------------- */
+.filter-item {
+    transition: opacity .4s ease, transform .4s ease;
+}
+.filter-item.is-hidden {
+    display: none;
+}
+
+/* Magnetic buttons need a transform origin reset */
+[data-magnetic] {
+    will-change: transform;
+}
