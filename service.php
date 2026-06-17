@@ -22,8 +22,8 @@ require __DIR__ . '/includes/header.php';
         'subtitle' => $service['desc'],
     ]); ?>
 
-    <section class="px-4 pb-16">
-        <div class="mx-auto max-w-container grid gap-12 lg:grid-cols-2 lg:items-start">
+    <section class="pb-16">
+        <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10 grid gap-12 lg:grid-cols-2 lg:items-start">
             <div data-reveal="up">
                 <h2 class="font-display text-3xl font-bold">What's included</h2>
                 <ul class="mt-6 space-y-4">

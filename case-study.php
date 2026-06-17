@@ -16,8 +16,8 @@ require __DIR__ . '/includes/head.php';
 require __DIR__ . '/includes/header.php';
 ?>
 <main>
-    <section class="px-4 pt-40 md:pt-48 pb-12">
-        <div class="mx-auto max-w-container">
+    <section class="pt-40 md:pt-48 pb-12">
+        <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10">
             <a href="<?= url('work.php') ?>" class="inline-flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors" data-reveal="fade">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
                 All case studies
@@ -32,8 +32,8 @@ require __DIR__ . '/includes/header.php';
     </section>
 
     <!-- hero visual -->
-    <section class="px-4 pb-16">
-        <div class="mx-auto max-w-container">
+    <section class="pb-16">
+        <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10">
             <div class="relative aspect-[21/9] overflow-hidden rounded-card" data-reveal="scale">
                 <div class="absolute inset-0" style="background:<?= e($cs['color']) ?>"></div>
                 <div class="absolute inset-0 grid place-items-center">
@@ -44,8 +44,8 @@ require __DIR__ . '/includes/header.php';
     </section>
 
     <!-- results -->
-    <section class="px-4 pb-16">
-        <div class="mx-auto max-w-container grid gap-6 sm:grid-cols-3" data-reveal="up">
+    <section class="pb-16">
+        <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10 grid gap-6 sm:grid-cols-3" data-reveal="up">
             <?php foreach ($cs['results'] as $r): ?>
                 <div class="rounded-card bg-surface p-8 text-white text-center">
                     <div class="font-display text-4xl md:text-5xl font-bold text-accent"><?= e($r['value']) ?></div>
@@ -56,8 +56,8 @@ require __DIR__ . '/includes/header.php';
     </section>
 
     <!-- narrative -->
-    <section class="px-4 pb-24">
-        <div class="mx-auto max-w-container grid gap-12 lg:grid-cols-2">
+    <section class="pb-24">
+        <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10 grid gap-12 lg:grid-cols-2">
             <div data-reveal="up">
                 <h2 class="font-display text-2xl font-bold">The challenge</h2>
                 <p class="mt-4 text-ink/80 leading-relaxed"><?= e($cs['problem']) ?></p>

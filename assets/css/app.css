@@ -25,15 +25,9 @@ body {
     font-feature-settings: "ss01";
 }
 
-/* Sticky header — subtle shrink/elevate after scroll */
-#site-header {
-    transform: translateY(0);
-}
-#site-header.is-scrolled nav {
-    box-shadow: 0 14px 40px -12px rgba(0, 0, 0, 0.4);
-}
+/* Sticky header — no shadow on scroll (keeps the flat dashed-border look) */
 #site-header.is-scrolled {
-    top: 0.5rem;
+    box-shadow: none;
 }
 
 /* --------------------------------------------------------------------------

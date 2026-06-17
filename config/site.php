@@ -1,17 +1,17 @@
 <?php
 /**
- * Global site configuration for Dyneixa Solutions.
+ * Global site configuration for template Solutions.
  * Drives brand, navigation, socials and contact info across header & footer.
  */
 
 return [
-    'name'    => 'Dyneixa',
-    'brand'   => 'Dyneixa',
+    'name'    => 'template',
+    'brand'   => 'template',
     'tagline' => 'Solutions',
-    'domain'  => 'dyneixa.com',
+    'domain'  => 'template.com',
 
     'contact' => [
-        'email' => 'hello@dyneixa.com',
+        'email' => 'hello@template.com',
         'phone' => '+359-123-45678',
     ],
 

@@ -44,7 +44,7 @@ $pageDesc  = $pageDesc  ?? 'Dyneixa Solutions is a creative agency for digital m
                         card: '28px',
                     },
                     maxWidth: {
-                        container: '1200px',
+                        container: '1440px',
                     },
                 },
             },

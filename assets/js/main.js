@@ -62,6 +62,27 @@
     }
 
     /* ---------------------------------------------------------------------
+       FAQ accordion (always runs)
+       --------------------------------------------------------------------- */
+    document.querySelectorAll('.faq-item').forEach((item) => {
+        const trigger = item.querySelector('.faq-trigger');
+        const panel = item.querySelector('.faq-panel');
+        const icon = item.querySelector('.faq-icon');
+        if (!trigger || !panel) return;
+        trigger.addEventListener('click', () => {
+            const open = panel.classList.toggle('is-open');
+            panel.style.gridTemplateRows = open ? '1fr' : '0fr';
+            trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (icon) icon.style.transform = open ? 'rotate(45deg)' : 'rotate(0deg)';
+            if (open) {
+                item.classList.add('border-ink/40');
+            } else {
+                item.classList.remove('border-ink/40');
+            }
+        });
+    });
+
+    /* ---------------------------------------------------------------------
        Newsletter / inline form fake-submit (always runs)
        --------------------------------------------------------------------- */
     document.querySelectorAll('[data-newsletter]').forEach((form) => {

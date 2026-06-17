@@ -1,8 +1,8 @@
 <?php
 /** About / approach section with a pinned-feeling stat panel. */
 ?>
-<section id="about" class="px-4 py-24">
-    <div class="mx-auto max-w-container">
+<section id="about" class="py-24">
+    <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10">
         <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
                 <?php partial('section-heading', [

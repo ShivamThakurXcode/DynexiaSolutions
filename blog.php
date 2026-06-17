@@ -13,8 +13,8 @@ require __DIR__ . '/includes/header.php';
         'subtitle' => 'Thinking on brand, growth, design and the craft of building.',
     ]); ?>
 
-    <section class="px-4 pb-24">
-        <div class="mx-auto max-w-container">
+    <section class="pb-24">
+        <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10">
             <?php $featured = $posts[0] ?? null; if ($featured): ?>
                 <a href="<?= url('post.php?slug=' . urlencode($featured['slug'])) ?>" data-reveal="up"
                    class="group grid overflow-hidden rounded-card border border-black/5 bg-white/60 md:grid-cols-2">

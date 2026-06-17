@@ -1,12 +1,12 @@
 <?php
 /** Home hero. */
 ?>
-<section class="relative pt-36 md:pt-44 pb-20 px-4 overflow-hidden">
+<section class="relative pt-36 md:pt-44 pb-20 overflow-hidden">
     <!-- floating accent blob -->
     <div data-parallax data-parallax-speed="-60" class="pointer-events-none absolute -top-10 right-[-6rem] h-72 w-72 rounded-full bg-accent/40 blur-3xl"></div>
     <div data-parallax data-parallax-speed="40" class="pointer-events-none absolute bottom-0 left-[-6rem] h-72 w-72 rounded-full bg-accent/20 blur-3xl"></div>
 
-    <div class="relative mx-auto max-w-container text-center">
+    <div class="relative mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10 text-center">
         <span class="inline-flex items-center gap-2 rounded-pill border border-black/10 bg-white/50 px-4 py-2 text-sm font-medium text-ink/70" data-reveal="fade">
             <span class="h-2 w-2 rounded-full bg-accent animate-pulse"></span>
             Creative agency &mdash; built for growth

@@ -42,8 +42,8 @@ $tiers = [
     ],
 ];
 ?>
-<section id="pricing" class="px-4 py-24">
-    <div class="mx-auto max-w-container">
+<section id="pricing" class="py-24">
+    <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10">
         <?php partial('section-heading', [
             'eyebrow'  => 'Pricing',
             'title'    => 'Simple pricing.<br>Scalable growth.',

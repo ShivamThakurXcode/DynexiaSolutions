@@ -16,7 +16,8 @@ require __DIR__ . '/includes/head.php';
 require __DIR__ . '/includes/header.php';
 ?>
 <main>
-    <article class="px-4 pt-40 md:pt-48 pb-24">
+    <article class="pt-40 md:pt-48 pb-24">
+        <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10">
         <div class="mx-auto max-w-3xl">
             <a href="<?= url('blog.php') ?>" class="inline-flex items-center gap-2 text-sm text-muted hover:text-ink transition-colors" data-reveal="fade">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
@@ -40,6 +41,7 @@ require __DIR__ . '/includes/header.php';
                     <p class="text-lg leading-relaxed text-ink/80"><?= e($para) ?></p>
                 <?php endforeach; ?>
             </div>
+        </div>
         </div>
     </article>
 
