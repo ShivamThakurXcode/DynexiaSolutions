@@ -6,7 +6,7 @@
 $text     = $text     ?? 'Button';
 $href     = $href     ?? '#';
 $variant  = $variant  ?? 'solid';
-$magnetic = $magnetic ?? true;
+$magnetic = $magnetic ?? false;
 $arrow    = $arrow    ?? false;
 $class    = $class    ?? '';
 
@@ -18,9 +18,11 @@ $variants = [
 $styles = $variants[$variant] ?? $variants['solid'];
 ?>
 <a href="<?= e($href) ?>" <?= $magnetic ? 'data-magnetic' : '' ?>
-   class="inline-flex items-center justify-center gap-2 rounded-pill px-6 py-3 text-sm font-semibold transition-all hover:scale-[1.02] <?= $styles ?> <?= e($class) ?>">
+   class="group inline-flex items-center justify-center rounded-pill py-2 pl-6 text-sm font-semibold transition-all hover:scale-[1.02] <?= $arrow ? 'gap-2 pr-1.5' : 'gap-2 px-6 py-3' ?> <?= $styles ?> <?= e($class) ?>">
     <?= e($text) ?>
     <?php if ($arrow): ?>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-dashed border-current transition-transform duration-300 group-hover:rotate-45">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </span>
     <?php endif; ?>
 </a>

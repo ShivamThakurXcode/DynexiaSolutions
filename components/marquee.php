@@ -13,7 +13,7 @@ $color      = $dark ? 'text-white/80' : 'text-ink/70';
 $hoverColor = $dark ? 'group-hover:text-white' : 'group-hover:text-ink';
 ?>
 <div class="mx-auto max-w-[1440px] px-6 md:px-10">
-    <div class="marquee group <?= $dark ? 'bg-surface' : '' ?>" data-marquee data-speed="<?= e($speed) ?>">
+    <div class="marquee group mx-auto max-w-[1440px] <?= $dark ? 'bg-surface' : '' ?>" data-marquee data-speed="<?= e($speed) ?>">
         <div class="marquee__track whitespace-nowrap <?= $class ?> <?= $color ?> <?= $hoverColor ?> transition-colors duration-300">
             <?php for ($r = 0; $r < 2; $r++): ?>
                 <span class="marquee__group inline-flex items-center">

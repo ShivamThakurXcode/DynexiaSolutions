@@ -104,7 +104,7 @@ require __DIR__ . '/includes/header.php';
                             <?php if (isset($errors['message'])): ?><p class="mt-1 text-xs text-red-400"><?= e($errors['message']) ?></p><?php endif; ?>
                         </div>
 
-                        <button type="submit" data-magnetic
+                        <button type="submit"
                                 class="w-full rounded-pill bg-white px-6 py-4 text-sm font-semibold text-ink hover:bg-accent transition-colors">
                             Send Message
                         </button>

@@ -30,7 +30,7 @@ for ($i = 0; $i < 6; $i++) {
         <div class="border-t border-dashed border-black/20"></div>
 
         <!-- CTA marquee band -->
-        <a href="<?= url('contact.php') ?>" class="block border-b border-dashed border-black/20 py-6 group">
+        <a href="<?= url('contact.php') ?>" class="block max-w-[1440px] mx-auto hover:bg-ink/5 border-b border-dashed border-black/20 py-6 group">
             <div class="marquee" data-marquee data-speed="22">
                 <div class="marquee__track font-display text-5xl md:text-7xl font-bold text-ink whitespace-nowrap">
                     <?php for ($r = 0; $r < 2; $r++): ?>
@@ -57,10 +57,12 @@ for ($i = 0; $i < 6; $i++) {
                         <div class="flex items-center gap-2 rounded-pill border border-dashed border-black/30 bg-white/40 p-1.5 pl-5 focus-within:border-ink transition-colors">
                             <input type="email" name="email" required placeholder="Your Email"
                                    class="w-full bg-transparent text-sm text-ink placeholder:text-muted focus:outline-none">
-                            <button type="submit" data-magnetic
+                            <button type="submit"
                                     class="inline-flex items-center gap-1.5 rounded-pill bg-surface px-5 py-2.5 text-sm font-semibold text-white hover:bg-ink transition-colors">
                                 Send
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                                <span class="grid h-7 w-7 place-items-center rounded-full border border-dashed border-current">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                                </span>
                             </button>
                         </div>
                         <p class="mt-3 hidden text-sm font-medium text-accent-dark" data-newsletter-success>Thanks — you're on the list. &#10003;</p>
@@ -109,10 +111,10 @@ for ($i = 0; $i < 6; $i++) {
         <div class="border-t border-dashed border-black/20"></div>
 
         <!-- Giant wordmark -->
-        <div class="px-4 py-10 select-none" aria-hidden="true">
+        <div class="px-4 py-10 select-none max-w-[1440px] mx-auto" aria-hidden="true">
             <h2 data-glitch
-                class="font-display font-bold leading-[0.8] text-ink text-center tracking-tighter"
-                style="font-size:clamp(5rem, 23vw, 22rem)"
+                class="font-display w-full font-bold leading-[0.8] text-ink text-center tracking-tighter"
+               
                 data-text="<?= e(strtoupper(site('brand'))) ?>">
                 <?= e(strtoupper(site('brand'))) ?>
             </h2>

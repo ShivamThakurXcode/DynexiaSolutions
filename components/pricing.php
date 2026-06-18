@@ -42,8 +42,8 @@ $tiers = [
     ],
 ];
 ?>
-<section id="pricing" class="py-24">
-    <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10">
+<section id="pricing">
+    <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10 py-24">
         <?php partial('section-heading', [
             'eyebrow'  => 'Pricing',
             'title'    => 'Simple pricing.<br>Scalable growth.',
@@ -81,7 +81,7 @@ $tiers = [
                             <?php if ($t['price'] !== 'Custom'): ?><span class="text-sm <?= $isDark ? 'text-white/50' : 'text-muted' ?>">/month</span><?php endif; ?>
                         </div>
                     </div>
-                    <a href="<?= url('contact.php') ?>" data-magnetic
+                    <a href="<?= url('contact.php') ?>"
                        class="mt-5 inline-flex items-center justify-center rounded-pill px-6 py-3.5 text-sm font-semibold transition-all hover:scale-[1.02] <?= $isDark ? 'bg-accent text-ink' : 'bg-surface text-white' ?>">
                         Start Now
                     </a>

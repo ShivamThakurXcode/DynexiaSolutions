@@ -1,5 +1,5 @@
 <?php require_once __DIR__ . '/helpers.php'; ?>
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-cream/80 backdrop-blur-md border-b border-dashed border-black/20 transition-all duration-300">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-cream border-b border-dashed border-black/20 transition-all duration-300">
     <div class="mx-auto max-w-container px-4">
         <nav class="flex items-center justify-between gap-4 py-4">
             <!-- Brand -->
@@ -25,10 +25,12 @@
             </ul>
 
             <div class="flex items-center gap-2">
-                <a href="<?= url('contact.php') ?>" data-magnetic
+                <a href="<?= url('contact.php') ?>"
                    class="hidden sm:inline-flex items-center gap-2 rounded-pill bg-surface px-5 py-2.5 text-sm font-semibold text-white transition-transform hover:scale-[1.03]">
                     Book a Call
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                    <span class="grid h-7 w-7 place-items-center rounded-full border border-dashed border-current">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                    </span>
                 </a>
                 <!-- Mobile toggle -->
                 <button id="nav-toggle" class="md:hidden grid h-10 w-10 place-items-center rounded-full bg-ink/5 text-ink" aria-label="Open menu">

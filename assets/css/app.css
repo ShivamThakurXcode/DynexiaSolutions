@@ -113,8 +113,3 @@ body {
 .filter-item.is-hidden {
     display: none;
 }
-
-/* Magnetic buttons need a transform origin reset */
-[data-magnetic] {
-    will-change: transform;
-}

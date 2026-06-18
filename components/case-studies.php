@@ -6,8 +6,8 @@
 $limit = $limit ?? 4;
 $items = array_slice(dataset('case-studies'), 0, $limit);
 ?>
-<section id="work" class="py-24">
-    <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10">
+<section id="work">
+    <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10 py-24">
         <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <?php partial('section-heading', [
                 'eyebrow' => 'Case studies',

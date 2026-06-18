@@ -7,8 +7,8 @@ $title  = $title  ?? 'Ready to build something that moves?';
 $text   = $text   ?? 'Tell us where you want to go. We\'ll map the fastest way to get there.';
 $button = $button ?? 'Book a Call';
 ?>
-<section class="py-24">
-    <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10">
+<section>
+    <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10 py-24">
         <div class="relative overflow-hidden rounded-card bg-surface px-6 py-16 md:px-16 md:py-24 text-center" data-reveal="scale">
             <div data-parallax data-parallax-speed="-40" class="pointer-events-none absolute -top-16 -right-16 h-64 w-64 rounded-full bg-accent/30 blur-3xl"></div>
             <div data-parallax data-parallax-speed="50" class="pointer-events-none absolute -bottom-16 -left-16 h-64 w-64 rounded-full bg-accent/20 blur-3xl"></div>

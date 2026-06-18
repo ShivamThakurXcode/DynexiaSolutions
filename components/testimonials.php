@@ -27,8 +27,8 @@ function review_social(string $key): string
     return $icons[$key] ?? '';
 }
 ?>
-<section class="py-24">
-    <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10">
+<section>
+    <div class="mx-auto max-w-container border-x border-dashed border-black/20 px-6 md:px-10 py-24">
         <!-- Section label + heading + intro -->
         <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between" data-reveal="up">
             <div>
