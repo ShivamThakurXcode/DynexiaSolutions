@@ -230,35 +230,33 @@
         }
     });
 
-    /* ----- Curved marquee: per-frame bend by distance from screen center ----- */
-    function curveMarquee() {
-        document.querySelectorAll('[data-curve-marquee]').forEach((stage) => {
-            const cards = Array.from(stage.querySelectorAll('.curve-card'));
-            if (!cards.length) return;
+    /* ----- Curved marquee: bend each card by distance from screen center ----- */
+    gsap.utils.toArray('[data-curve-marquee]').forEach((stage) => {
+        const cards = stage.querySelectorAll('.curve-card');
+        if (!cards.length) return;
 
-            const maxRotate = 50; // deg, matches static fallback extremes
-            const maxTranslateZ = 120; // px, matches static fallback extremes
+        const MAX_ROT = 52;   // max rotateY at the edges (deg)
+        const MAX_Z = 130;    // how far edge cards recede (px)
 
-            gsap.ticker.add(() => {
-                const stageRect = stage.getBoundingClientRect();
-                const centerX = stageRect.left + stageRect.width / 2;
-                const halfWidth = stageRect.width / 2 || 1;
-
-                cards.forEach((card) => {
-                    const cardRect = card.getBoundingClientRect();
-                    const cardCenterX = cardRect.left + cardRect.width / 2;
-                    const offset = (cardCenterX - centerX) / halfWidth;
-                    const clamped = Math.max(-1, Math.min(1, offset));
-
-                    const rotateY = -clamped * maxRotate;
-                    const translateZ = -Math.abs(clamped) * maxTranslateZ;
-
-                    card.style.transform = `rotateY(${rotateY}deg) translateZ(${translateZ}px)`;
-                });
+        const bend = () => {
+            const mid = window.innerWidth / 2;
+            cards.forEach((card) => {
+                const rect = card.getBoundingClientRect();
+                const cx = rect.left + rect.width / 2;
+                // normalised distance from center: -1 (far left) .. 0 .. 1 (far right)
+                const t = Math.max(-1, Math.min(1, (cx - mid) / mid));
+                const rot = -t * MAX_ROT;
+                const z = -Math.abs(t) * MAX_Z;
+                const scale = 1 - Math.abs(t) * 0.12;
+                card.style.transform =
+                    `rotateY(${rot}deg) translateZ(${z}px) scale(${scale})`;
             });
-        });
-    }
-    curveMarquee();
+        };
+
+        bend();
+        gsap.ticker.add(bend);
+        window.addEventListener('resize', bend);
+    });
 
     /* ----- Footer wordmark reveal ----- */
     const glitch = document.querySelector('[data-glitch]');
