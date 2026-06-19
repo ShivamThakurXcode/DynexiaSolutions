@@ -118,7 +118,7 @@ body {
    Curved auto-scroll marquee CTA
    -------------------------------------------------------------------------- */
 .curve-stage {
-    perspective: 1200px;
+    perspective: 700px;
     perspective-origin: 50% 50%;
 }
 .curve-track {

@@ -235,8 +235,8 @@
         const cards = stage.querySelectorAll('.curve-card');
         if (!cards.length) return;
 
-        const MAX_ROT = 52;   // max rotateY at the edges (deg)
-        const MAX_Z = 130;    // how far edge cards recede (px)
+        const MAX_ROT = 60;   // max rotateY at the edges (deg)
+        const MAX_Z = 320;    // how far edge cards recede (px)
 
         const bend = () => {
             const mid = window.innerWidth / 2;
@@ -247,7 +247,7 @@
                 const t = Math.max(-1, Math.min(1, (cx - mid) / mid));
                 const rot = -t * MAX_ROT;
                 const z = -Math.abs(t) * MAX_Z;
-                const scale = 1 - Math.abs(t) * 0.12;
+                const scale = 1 - Math.abs(t) * 0.18;
                 card.style.transform =
                     `rotateY(${rot}deg) translateZ(${z}px) scale(${scale})`;
             });

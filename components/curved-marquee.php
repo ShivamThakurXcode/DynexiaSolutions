@@ -42,16 +42,18 @@ $cards = [
         </div>
     </div>
 
-    <!-- Centered copy overlay -->
-    <div class="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center">
-        <p class="mb-4 inline-flex items-center gap-2 text-sm font-medium text-accent">
-            <span class="h-1.5 w-1.5 rounded-full bg-accent"></span><?= e($eyebrow) ?>
-        </p>
-        <h2 class="font-display text-4xl font-bold leading-[1.05] text-white md:text-6xl">
-            <?= e($title) ?>
-        </h2>
-        <p class="mt-5 max-w-md text-base text-white/55"><?= e($text) ?></p>
-        <div class="pointer-events-auto mt-44 md:mt-56">
+    <!-- Copy overlay: text pinned to top, button to bottom; card row sits between -->
+    <div class="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-between px-6 py-12 text-center md:py-16">
+        <div class="max-w-md">
+            <p class="mb-4 inline-flex items-center gap-2 text-sm font-medium text-accent">
+                <span class="h-1.5 w-1.5 rounded-full bg-accent"></span><?= e($eyebrow) ?>
+            </p>
+            <h2 class="font-display text-4xl font-bold leading-[1.05] text-white md:text-6xl">
+                <?= e($title) ?>
+            </h2>
+            <p class="mt-5 text-base text-white/55"><?= e($text) ?></p>
+        </div>
+        <div class="pointer-events-auto">
             <?php partial('button', ['text' => $button, 'href' => url('contact.php'), 'variant' => 'solid']); ?>
         </div>
     </div>
