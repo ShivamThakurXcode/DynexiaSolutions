@@ -113,3 +113,52 @@ body {
 .filter-item.is-hidden {
     display: none;
 }
+
+/* --------------------------------------------------------------------------
+   Curved auto-scroll marquee CTA
+   -------------------------------------------------------------------------- */
+.curve-stage {
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+}
+.curve-track {
+    display: inline-flex;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+.curve-group {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    transform-style: preserve-3d;
+}
+.curve-card {
+    flex-shrink: 0;
+    width: 11rem;          /* ~176px */
+    aspect-ratio: 3 / 4;
+    margin: 0 0.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #1a1a1a;
+    transform-style: preserve-3d;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Static concave fan for no-JS / reduced-motion (JS overrides per-card when active) */
+.no-js .curve-card:nth-child(1),
+.reduce-motion .curve-card:nth-child(1) { transform: rotateY(50deg) translateZ(-120px); }
+.no-js .curve-card:nth-child(2),
+.reduce-motion .curve-card:nth-child(2) { transform: rotateY(38deg) translateZ(-80px); }
+.no-js .curve-card:nth-child(3),
+.reduce-motion .curve-card:nth-child(3) { transform: rotateY(24deg) translateZ(-40px); }
+.no-js .curve-card:nth-child(4),
+.reduce-motion .curve-card:nth-child(4) { transform: rotateY(12deg) translateZ(-16px); }
+.no-js .curve-card:nth-child(7),
+.reduce-motion .curve-card:nth-child(7) { transform: rotateY(-12deg) translateZ(-16px); }
+.no-js .curve-card:nth-child(8),
+.reduce-motion .curve-card:nth-child(8) { transform: rotateY(-24deg) translateZ(-40px); }
+.no-js .curve-card:nth-child(9),
+.reduce-motion .curve-card:nth-child(9) { transform: rotateY(-38deg) translateZ(-80px); }
+.no-js .curve-card:nth-child(10),
+.reduce-motion .curve-card:nth-child(10) { transform: rotateY(-50deg) translateZ(-120px); }
