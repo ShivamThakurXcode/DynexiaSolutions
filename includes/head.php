@@ -19,7 +19,7 @@ $pageDesc  = $pageDesc  ?? 'Dyneixa Solutions is a creative agency for digital m
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind (CDN, no build step) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,13 +31,14 @@ $pageDesc  = $pageDesc  ?? 'Dyneixa Solutions is a creative agency for digital m
                         accent: '#CCEB00',
                         'accent-dark': '#A6C200',
                         cream: '#F5F5DC',
+                        'cream-dark': '#E6E6C8',
                         surface: '#0A0A0A',
                         ink: '#111111',
                         muted: '#6B7280',
                     },
                     fontFamily: {
-                        display: ['"Space Grotesk"', 'sans-serif'],
-                        sans: ['Inter', 'sans-serif'],
+                        display: ['Asap', 'sans-serif'],
+                        sans: ['Asap', 'sans-serif'],
                     },
                     borderRadius: {
                         pill: '999px',

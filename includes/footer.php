@@ -19,7 +19,7 @@ for ($i = 0; $i < 6; $i++) {
     $ctaItems[] = 'Book An Intro Call';
 }
 ?>
-<footer class="relative bg-cream overflow-hidden">
+<footer class="relative bg-cream-dark overflow-hidden">
     <!-- dashed grid frame: left + right vertical rules aligned to the container -->
     <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
         <div class="mx-auto h-full max-w-container border-x border-dashed border-black/20"></div>
@@ -27,10 +27,10 @@ for ($i = 0; $i < 6; $i++) {
 
     <div class="relative z-10">
         <!-- top dashed divider -->
-        <div class="border-t border-dashed border-black/20"></div>
+        <div class="border-t  border-dashed border-black/20"></div>
 
         <!-- CTA marquee band -->
-        <a href="<?= url('contact.php') ?>" class="block max-w-[1440px] mx-auto hover:bg-ink/5 border-b border-dashed border-black/20 py-6 group">
+        <a href="<?= url('contact.php') ?>" class="block max-w-[1440px] mx-auto hover:bg-ink hover:text-white border-b border-dashed border-black/20 py-6 group">
             <div class="marquee" data-marquee data-speed="22">
                 <div class="marquee__track font-display text-5xl md:text-7xl font-bold text-ink whitespace-nowrap">
                     <?php for ($r = 0; $r < 2; $r++): ?>

@@ -7,6 +7,14 @@
     --ink: #111111;
 }
 
+/* Force Asap everywhere — works even if the Tailwind CDN config hasn't applied yet */
+html,
+body,
+.font-sans,
+.font-display {
+    font-family: 'Asap', sans-serif !important;
+}
+
 html.lenis,
 html.lenis body {
     height: auto;

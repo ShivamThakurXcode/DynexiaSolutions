@@ -7,12 +7,12 @@ require __DIR__ . '/includes/header.php';
 <main>
     <?php
     partial('hero');
-    partial('services-grid');
+    partial('services-rows');
     partial('about');
     partial('case-studies', ['limit' => 4]);
+    partial('curved-marquee');
     partial('pricing');
     partial('testimonials');
-    partial('curved-marquee');
     ?>
 </main>
 <?php
