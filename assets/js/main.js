@@ -215,6 +215,9 @@
             repeat: -1,
         });
 
+        // Curved marquee always auto-scrolls right-to-left; scroll only speeds it up.
+        const lockDirection = wrap.hasAttribute('data-curve-marquee');
+
         // Nudge speed/direction with scroll velocity
         if (ScrollTrigger) {
             ScrollTrigger.create({
@@ -223,8 +226,13 @@
                 end: 'bottom top',
                 onUpdate: (self) => {
                     const v = self.getVelocity();
-                    const dir = v < 0 ? -1 : 1;
-                    tween.timeScale(dir * (1 + Math.min(Math.abs(v) / 1500, 2)));
+                    const boost = 1 + Math.min(Math.abs(v) / 1500, 2);
+                    if (lockDirection) {
+                        tween.timeScale(boost);          // never reverse, never stop
+                    } else {
+                        const dir = v < 0 ? -1 : 1;
+                        tween.timeScale(dir * boost);
+                    }
                 },
             });
         }
