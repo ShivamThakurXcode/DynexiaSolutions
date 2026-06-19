@@ -118,7 +118,7 @@ body {
    Curved auto-scroll marquee CTA
    -------------------------------------------------------------------------- */
 .curve-stage {
-    perspective: 700px;
+    perspective: 1100px;
     perspective-origin: 50% 50%;
 }
 .curve-track {
@@ -145,20 +145,20 @@ body {
     backface-visibility: hidden;
 }
 
-/* Static concave fan for no-JS / reduced-motion (JS overrides per-card when active) */
+/* Static concave cylinder for no-JS / reduced-motion (JS overrides per-card when active) */
 .no-js .curve-card:nth-child(1),
-.reduce-motion .curve-card:nth-child(1) { transform: translateY(120px) rotateY(50deg) translateZ(-220px); }
+.reduce-motion .curve-card:nth-child(1) { transform: rotateY(72deg) translateZ(120px) scale(1.5); }
 .no-js .curve-card:nth-child(2),
-.reduce-motion .curve-card:nth-child(2) { transform: translateY(75px) rotateY(38deg) translateZ(-150px); }
+.reduce-motion .curve-card:nth-child(2) { transform: rotateY(54deg) translateZ(20px) scale(1.28); }
 .no-js .curve-card:nth-child(3),
-.reduce-motion .curve-card:nth-child(3) { transform: translateY(38px) rotateY(24deg) translateZ(-80px); }
+.reduce-motion .curve-card:nth-child(3) { transform: rotateY(36deg) translateZ(-70px) scale(1.12); }
 .no-js .curve-card:nth-child(4),
-.reduce-motion .curve-card:nth-child(4) { transform: translateY(12px) rotateY(12deg) translateZ(-30px); }
+.reduce-motion .curve-card:nth-child(4) { transform: rotateY(18deg) translateZ(-130px) scale(1.03); }
 .no-js .curve-card:nth-child(7),
-.reduce-motion .curve-card:nth-child(7) { transform: translateY(12px) rotateY(-12deg) translateZ(-30px); }
+.reduce-motion .curve-card:nth-child(7) { transform: rotateY(-18deg) translateZ(-130px) scale(1.03); }
 .no-js .curve-card:nth-child(8),
-.reduce-motion .curve-card:nth-child(8) { transform: translateY(38px) rotateY(-24deg) translateZ(-80px); }
+.reduce-motion .curve-card:nth-child(8) { transform: rotateY(-36deg) translateZ(-70px) scale(1.12); }
 .no-js .curve-card:nth-child(9),
-.reduce-motion .curve-card:nth-child(9) { transform: translateY(75px) rotateY(-38deg) translateZ(-150px); }
+.reduce-motion .curve-card:nth-child(9) { transform: rotateY(-54deg) translateZ(20px) scale(1.28); }
 .no-js .curve-card:nth-child(10),
-.reduce-motion .curve-card:nth-child(10) { transform: translateY(120px) rotateY(-50deg) translateZ(-220px); }
+.reduce-motion .curve-card:nth-child(10) { transform: rotateY(-72deg) translateZ(120px) scale(1.5); }

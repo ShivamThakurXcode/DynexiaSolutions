@@ -235,9 +235,12 @@
         const cards = stage.querySelectorAll('.curve-card');
         if (!cards.length) return;
 
-        const MAX_ROT = 55;   // max rotateY at the edges (deg)
-        const MAX_Z = 260;    // how far edge cards recede (px)
-        const MAX_DROP = 130; // how far edge cards drop down to form the arc (px)
+        // Concave cylinder ("tunnel"): center cards face you and sit deepest,
+        // edge cards wrap toward the viewer like the inside walls of a cylinder.
+        const MAX_ROT = 72;    // edge rotateY (deg) — how hard the walls wrap in
+        const CENTER_Z = -160; // center cards pushed back (deepest point)
+        const EDGE_Z = 120;    // edge cards pulled toward viewer (the big panels)
+        const EDGE_SCALE = 0.5; // extra size added to the outermost cards
 
         const bend = () => {
             const mid = window.innerWidth / 2;
@@ -246,12 +249,12 @@
                 const cx = rect.left + rect.width / 2;
                 // normalised distance from center: -1 (far left) .. 0 .. 1 (far right)
                 const t = Math.max(-1, Math.min(1, (cx - mid) / mid));
-                const rot = -t * MAX_ROT;
-                const z = -(t * t) * MAX_Z;       // recede toward the edges
-                const y = (t * t) * MAX_DROP;     // parabolic drop -> concave arc
-                const scale = 1 - Math.abs(t) * 0.18;
+                const a = Math.abs(t);
+                const rot = -t * MAX_ROT;                       // wrap toward viewer
+                const z = CENTER_Z + (EDGE_Z - CENTER_Z) * a;   // edges forward, center back
+                const scale = 1 + EDGE_SCALE * (a * a);         // edges grow into big panels
                 card.style.transform =
-                    `translateY(${y}px) rotateY(${rot}deg) translateZ(${z}px) scale(${scale})`;
+                    `rotateY(${rot}deg) translateZ(${z}px) scale(${scale})`;
             });
         };
 
