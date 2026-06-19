@@ -235,8 +235,9 @@
         const cards = stage.querySelectorAll('.curve-card');
         if (!cards.length) return;
 
-        const MAX_ROT = 60;   // max rotateY at the edges (deg)
-        const MAX_Z = 320;    // how far edge cards recede (px)
+        const MAX_ROT = 55;   // max rotateY at the edges (deg)
+        const MAX_Z = 260;    // how far edge cards recede (px)
+        const MAX_DROP = 130; // how far edge cards drop down to form the arc (px)
 
         const bend = () => {
             const mid = window.innerWidth / 2;
@@ -246,10 +247,11 @@
                 // normalised distance from center: -1 (far left) .. 0 .. 1 (far right)
                 const t = Math.max(-1, Math.min(1, (cx - mid) / mid));
                 const rot = -t * MAX_ROT;
-                const z = -Math.abs(t) * MAX_Z;
+                const z = -(t * t) * MAX_Z;       // recede toward the edges
+                const y = (t * t) * MAX_DROP;     // parabolic drop -> concave arc
                 const scale = 1 - Math.abs(t) * 0.18;
                 card.style.transform =
-                    `rotateY(${rot}deg) translateZ(${z}px) scale(${scale})`;
+                    `translateY(${y}px) rotateY(${rot}deg) translateZ(${z}px) scale(${scale})`;
             });
         };
 

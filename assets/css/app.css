@@ -147,18 +147,18 @@ body {
 
 /* Static concave fan for no-JS / reduced-motion (JS overrides per-card when active) */
 .no-js .curve-card:nth-child(1),
-.reduce-motion .curve-card:nth-child(1) { transform: rotateY(50deg) translateZ(-120px); }
+.reduce-motion .curve-card:nth-child(1) { transform: translateY(120px) rotateY(50deg) translateZ(-220px); }
 .no-js .curve-card:nth-child(2),
-.reduce-motion .curve-card:nth-child(2) { transform: rotateY(38deg) translateZ(-80px); }
+.reduce-motion .curve-card:nth-child(2) { transform: translateY(75px) rotateY(38deg) translateZ(-150px); }
 .no-js .curve-card:nth-child(3),
-.reduce-motion .curve-card:nth-child(3) { transform: rotateY(24deg) translateZ(-40px); }
+.reduce-motion .curve-card:nth-child(3) { transform: translateY(38px) rotateY(24deg) translateZ(-80px); }
 .no-js .curve-card:nth-child(4),
-.reduce-motion .curve-card:nth-child(4) { transform: rotateY(12deg) translateZ(-16px); }
+.reduce-motion .curve-card:nth-child(4) { transform: translateY(12px) rotateY(12deg) translateZ(-30px); }
 .no-js .curve-card:nth-child(7),
-.reduce-motion .curve-card:nth-child(7) { transform: rotateY(-12deg) translateZ(-16px); }
+.reduce-motion .curve-card:nth-child(7) { transform: translateY(12px) rotateY(-12deg) translateZ(-30px); }
 .no-js .curve-card:nth-child(8),
-.reduce-motion .curve-card:nth-child(8) { transform: rotateY(-24deg) translateZ(-40px); }
+.reduce-motion .curve-card:nth-child(8) { transform: translateY(38px) rotateY(-24deg) translateZ(-80px); }
 .no-js .curve-card:nth-child(9),
-.reduce-motion .curve-card:nth-child(9) { transform: rotateY(-38deg) translateZ(-80px); }
+.reduce-motion .curve-card:nth-child(9) { transform: translateY(75px) rotateY(-38deg) translateZ(-150px); }
 .no-js .curve-card:nth-child(10),
-.reduce-motion .curve-card:nth-child(10) { transform: rotateY(-50deg) translateZ(-120px); }
+.reduce-motion .curve-card:nth-child(10) { transform: translateY(120px) rotateY(-50deg) translateZ(-220px); }
