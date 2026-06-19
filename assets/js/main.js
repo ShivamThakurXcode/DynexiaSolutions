@@ -230,6 +230,36 @@
         }
     });
 
+    /* ----- Curved marquee: per-frame bend by distance from screen center ----- */
+    function curveMarquee() {
+        document.querySelectorAll('[data-curve-marquee]').forEach((stage) => {
+            const cards = Array.from(stage.querySelectorAll('.curve-card'));
+            if (!cards.length) return;
+
+            const maxRotate = 50; // deg, matches static fallback extremes
+            const maxTranslateZ = 120; // px, matches static fallback extremes
+
+            gsap.ticker.add(() => {
+                const stageRect = stage.getBoundingClientRect();
+                const centerX = stageRect.left + stageRect.width / 2;
+                const halfWidth = stageRect.width / 2 || 1;
+
+                cards.forEach((card) => {
+                    const cardRect = card.getBoundingClientRect();
+                    const cardCenterX = cardRect.left + cardRect.width / 2;
+                    const offset = (cardCenterX - centerX) / halfWidth;
+                    const clamped = Math.max(-1, Math.min(1, offset));
+
+                    const rotateY = -clamped * maxRotate;
+                    const translateZ = -Math.abs(clamped) * maxTranslateZ;
+
+                    card.style.transform = `rotateY(${rotateY}deg) translateZ(${translateZ}px)`;
+                });
+            });
+        });
+    }
+    curveMarquee();
+
     /* ----- Footer wordmark reveal ----- */
     const glitch = document.querySelector('[data-glitch]');
     if (glitch) {

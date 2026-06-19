@@ -12,7 +12,7 @@ require __DIR__ . '/includes/header.php';
     partial('case-studies', ['limit' => 4]);
     partial('pricing');
     partial('testimonials');
-    partial('cta');
+    partial('curved-marquee');
     ?>
 </main>
 <?php
